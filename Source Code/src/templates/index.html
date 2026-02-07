@@ -1,0 +1,110 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero-modern text-center py-5 mb-5">
+  <div class="container">
+    <h1 class="fw-bold mb-4">
+      Meta-Fusion Ensemble of Transformer Models for <br>
+      Robust Multilingual and Cross-Domain Sentiment Classification
+    </h1>
+    <p class="lead text-muted mx-auto" style="max-width: 850px;">
+      A next-generation Meta-Fusion MLP architecture that unifies the strengths of BERT, RoBERTa, DistilBERT, 
+      and XLM-RoBERTa for multilingual, cross-domain, and neutral-aware sentiment prediction.
+    </p>
+    <a href="/predict_page" class="btn btn-glow btn-lg mt-4">
+      🚀 Try Prediction
+    </a>
+  </div>
+</section>
+
+<!-- ===== INTRODUCTION ===== -->
+<section class="section-light py-5">
+  <div class="container">
+    <h2 class="section-title">Introduction</h2>
+    <p>
+      Sentiment Analysis (SA) has progressed from simple binary polarity detection to multilingual and cross-domain understanding. 
+      Real-world text differs vastly across languages, topics, and contexts—posing challenges for model generalization. 
+      Although transformer models like <strong>BERT</strong>, <strong>RoBERTa</strong>, <strong>DistilBERT</strong>, and 
+      <strong>XLM-RoBERTa</strong> have revolutionized SA, they still struggle with domain and language variability. 
+      Traditional ensemble techniques such as majority voting or averaging fail to capture inter-model dependencies.
+      To address this, we propose a <strong>Meta-Fusion MLP Ensemble</strong> that dynamically learns how to combine multiple transformer outputs 
+      for robust, multilingual sentiment prediction.
+    </p>
+  </div>
+</section>
+
+<!-- ===== PROBLEM STATEMENT ===== -->
+<section class="section-dark text-light py-5">
+  <div class="container">
+    <h2 class="section-title text-white">Problem Statement</h2>
+    <div class="row mt-4">
+      <div class="col-md-6 mb-4">
+        <div class="glass-card p-4">
+          <h5 class="fw-bold mb-2 text-primary">Existing sentiment models</h5>
+          <ul>
+            <li>Perform well on individual domains but fail under cross-domain or multilingual conditions.</li>
+            <li>Depend on static fusion techniques (voting or averaging), which ignore inter-model interactions.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 mb-4">
+        <div class="glass-card p-4">
+          <h5 class="fw-bold mb-2 text-primary">There is a need for</h5>
+          <ul>
+            <li>A trainable fusion mechanism that learns dependencies between model logits.</li>
+            <li>A generalized ensemble framework effective across multiple datasets, languages, and sentiment types.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OBJECTIVES ===== -->
+<section class="section-light py-5">
+  <div class="container">
+    <h2 class="section-title">Objectives</h2>
+    <div class="row mt-4 g-4">
+      <div class="col-md-4">
+        <div class="card objective-card h-100 shadow-sm">
+          <div class="card-body">
+            <p>Develop a Meta-Fusion Ensemble integrating <strong>BERT</strong>, <strong>RoBERTa</strong>, 
+              <strong>DistilBERT</strong>, and <strong>XLM-RoBERTa</strong>.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card objective-card h-100 shadow-sm">
+          <div class="card-body">
+            <p>Achieve robust sentiment prediction across English and multilingual datasets, improving domain transfer and adaptability.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card objective-card h-100 shadow-sm">
+          <div class="card-body">
+            <p>Enhance neutral sentiment detection, which remains a key challenge in SA.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card objective-card h-100 shadow-sm">
+          <div class="card-body">
+            <p>Overcome research gaps related to noise robustness, low-resource adaptability, and domain transfer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card objective-card h-100 shadow-sm">
+          <div class="card-body">
+            <p>Enhance neutral sentiment detection and validate results through balanced evaluation (2,700 samples) for reliability.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+

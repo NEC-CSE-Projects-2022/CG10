@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ===== HERO SECTION ===== -->
+<section class="hero-about text-center text-light py-5 mb-5">
+  <div class="container">
+    <h1 class="fw-bold display-5">About Meta-Fusion Sentiment Analysis</h1>
+    <p class="lead mt-3">
+      A Multilingual and Cross-Domain Transformer Ensemble for Robust Sentiment Understanding
+    </p>
+  </div>
+</section>
+
+<div class="container">
+
+  <!-- ===== OVERVIEW ===== -->
+  <section class="about-section mb-5">
+    <h2 class="section-title">📘 Overview</h2>
+    <p>
+      The <strong>Meta-Fusion Sentiment Analysis System</strong> is an advanced multilingual and cross-domain sentiment classification framework designed to overcome the limitations of single-model approaches.
+      It combines the strengths of multiple transformer architectures—<strong>BERT, RoBERTa, DistilBERT, and XLM-RoBERTa</strong>—through a learnable <strong>Meta-Fusion Ensemble</strong>.
+    </p>
+    <p>
+      Instead of static voting or averaging, a <strong>Multi-Layer Perceptron (MLP)</strong> dynamically fuses model logits to capture inter-model dependencies and enhance generalization across domains and languages.
+    </p>
+
+    <div class="highlight-card">
+      <p class="mb-1"><strong>Accuracy:</strong> 86.91%</p>
+      <p class="mb-0"><strong>Macro F1-score:</strong> 85.67%</p>
+      <p class="text-muted mt-1">Evaluated on a balanced dataset of 2,700 samples</p>
+    </div>
+  </section>
+
+  <!-- ===== DATASETS ===== -->
+  <section class="about-section mb-5">
+    <h2 class="section-title">📊 Datasets Used</h2>
+    <p>
+      To ensure domain and linguistic diversity, the system was trained and evaluated on four benchmark datasets:
+    </p>
+
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped align-middle">
+        <thead class="table-primary">
+          <tr>
+            <th>Dataset</th>
+            <th>Domain</th>
+            <th>Classes</th>
+            <th>Language(s)</th>
+            <th>Samples</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Sentiment140</td><td>Social Media (Twitter)</td><td>Positive / Negative</td><td>English</td><td>675</td></tr>
+          <tr><td>IMDB Reviews</td><td>Movie Reviews</td><td>Positive / Negative</td><td>English</td><td>675</td></tr>
+          <tr><td>SemEval 2014 ABSA</td><td>Product Reviews</td><td>Positive / Negative / Neutral</td><td>English</td><td>675</td></tr>
+          <tr><td>Multilingual Tweets</td><td>Blogs, News, Tweets</td><td>Positive / Negative / Neutral</td><td>10+ Languages</td><td>675</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="text-muted">
+      Each dataset was balanced and preprocessed uniformly to maintain cross-domain fairness, forming a consolidated evaluation set of 2,700 samples.
+    </p>
+  </section>
+
+  <!-- ===== PREPROCESSING ===== -->
+  <section class="about-section mb-5">
+    <h2 class="section-title">⚙️ Preprocessing Pipeline</h2>
+    <ul class="styled-list">
+      <li><strong>Data Cleaning:</strong> Removal of special symbols, URLs, and redundant whitespaces.</li>
+      <li><strong>Tokenization:</strong> Dataset-specific tokenizers — BertTokenizer for English and XLMRobertaTokenizer for multilingual data.</li>
+      <li><strong>Sequence Formatting:</strong> Padding or truncation to 128 tokens per text.</li>
+      <li><strong>Aspect Pairing:</strong> For ABSA data, aspect terms and sentences are combined as contextual pairs.</li>
+      <li><strong>Tensor Conversion:</strong> Texts, masks, and labels are converted into PyTorch tensors.</li>
+    </ul>
+  </section>
+
+  <!-- ===== METHODOLOGY ===== -->
+  <section class="about-section mb-5">
+    <h2 class="section-title">🧠 Methodology</h2>
+    <p>
+      The proposed framework follows a two-stage learning architecture:
+    </p>
+    <div class="method-box">
+      <h5>Stage 1 – Base Model Fine-tuning</h5>
+      <ul>
+        <li>BERT → Sentiment140</li>
+        <li>RoBERTa → IMDB</li>
+        <li>DistilBERT → ABSA</li>
+        <li>XLM-RoBERTa → Multilingual Tweets</li>
+      </ul>
+      <h5 class="mt-4">Stage 2 – Meta-Fusion Layer</h5>
+      <p>
+        Output logits from all four models are concatenated and passed into a trainable <strong>MLP</strong> with two hidden layers (64 & 32 neurons) using <strong>ReLU activations</strong> and a <strong>Softmax</strong> output layer.
+        This architecture dynamically adapts to sentiment variations across domains and languages.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== BASE MODELS ===== -->
+  <section class="about-section mb-5">
+    <h2 class="section-title">📈 Base Models and Fusion Performance</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle">
+        <thead class="table-primary">
+          <tr><th>Model</th><th>Dataset</th><th>Accuracy (%)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>BERT</td><td>Sentiment140</td><td>85.30</td></tr>
+          <tr><td>RoBERTa</td><td>IMDB</td><td>87.00</td></tr>
+          <tr><td>DistilBERT</td><td>ABSA</td><td>83.20</td></tr>
+          <tr><td>XLM-RoBERTa</td><td>Multilingual Tweets</td><td>83.90</td></tr>
+          <tr class="fw-bold text-success"><td>Meta-Fusion MLP (Proposed)</td><td>Combined</td><td>86.91</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      The Meta-Fusion MLP learns synergistic patterns across these models, enabling domain-agnostic and language-resilient sentiment recognition.
+    </p>
+  </section>
+
+</div>
+
+{% endblock %}

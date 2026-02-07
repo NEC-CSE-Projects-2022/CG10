@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ===== HERO HEADER ===== -->
+<section class="hero-modern text-center py-5 mb-5">
+  <div class="container">
+    <h1 class="fw-bold mb-3">Figures & Visual Insights</h1>
+    <p class="lead text-muted mx-auto" style="max-width: 850px;">
+      Explore the Meta-Fusion Sentiment Analysis framework — from preprocessing to model evaluation — 
+      through high-quality visualizations and comparison charts.
+    </p>
+  </div>
+</section>
+
+<!-- ===== IMAGE GRID ===== -->
+<div class="container gallery-container">
+  <div class="row g-4">
+
+    {% set figures = [
+      {'src': 'fig1_pipeline.png', 'caption': 'Fig. 1. Preprocessing Pipeline Flowchart'},
+      {'src': 'fig2_architecture.png', 'caption': 'Fig. 2. Meta-Fusion Model Architecture'},
+      {'src': 'fig3_confusion_matrix.png', 'caption': 'Fig. 3. Confusion Matrix Heatmap'},
+      {'src': 'fig4_metrics_summary.png', 'caption': 'Fig. 4. F1-Score, Recall, and Precision Summary'},
+      {'src': 'fig5_train_test_accuracy.png', 'caption': 'Fig. 5. Training vs Testing Accuracy'},
+      {'src': 'fig6_accuracy_comparison.png', 'caption': 'Fig. 6. Accuracy Comparison of Base Models vs Meta-Fusion MLP'},
+      {'src': 'fig7_performance_comparison.png', 'caption': 'Fig. 7. F1-Score, Precision, and Recall Comparison'}
+    ] %}
+
+    {% for fig in figures %}
+    <div class="col-md-4 col-sm-6">
+      <div class="image-card shadow-sm">
+        <img src="{{ url_for('static', filename='images/' + fig.src) }}" 
+             class="img-fluid gallery-img" 
+             alt="{{ fig.caption }}" 
+             data-caption="{{ fig.caption }}">
+        <div class="img-caption text-center">
+          <h6>{{ fig.caption }}</h6>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  </div>
+</div>
+
+<!-- ===== LIGHTBOX OVERLAY ===== -->
+<div id="lightbox" class="lightbox">
+  <span class="close-btn">&times;</span>
+  <img class="lightbox-img" src="" alt="">
+  <div class="lightbox-caption"></div>
+  <a class="prev">&#10094;</a>
+  <a class="next">&#10095;</a>
+</div>
+
+{% endblock %}
