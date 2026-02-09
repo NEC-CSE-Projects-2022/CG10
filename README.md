@@ -7,7 +7,7 @@
 **_Work Done:** Complete project ownership including problem formulation, dataset selection, preprocessing, transformer model training (BERT, RoBERTa, DistilBERT, XLM-RoBERTa), meta-fusion ensemble design using MLP, experimentation, evaluation, result analysis, and research paper writing.
 
 - 22471A05G6 — **Jaya Lakshmi Kshatriya** ( [LinkedIn](https://www.linkedin.com/in/jaya-lakshmi) )
-**_Work Done:** Assisted in experimentation review and documentation support.
+**_Work Done:** Assisted in experimentation review and done the whole documentation regarding project.
 
 - 22471A05I9 — **Apsa Shaik** ( [LinkedIn](https://www.linkedin.com/in/apsa-appu-shaik-361a69287/) )
 **_Work Done:** Assisted in literature survey support and result verification.
