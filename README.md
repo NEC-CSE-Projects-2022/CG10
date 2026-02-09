@@ -6,10 +6,10 @@
 - 22471A05I3 — **Prasanna Panchumarthi** ( [LinkedIn](https://www.linkedin.com/in/prasanna-panchumarthi/) )
 **_Work Done:** Complete project ownership including problem formulation, dataset selection, preprocessing, transformer model training (BERT, RoBERTa, DistilBERT, XLM-RoBERTa), meta-fusion ensemble design using MLP, experimentation, evaluation, result analysis, and research paper writing.
 
-- 22471A05G6 — **Jaya Lakshmi Kshatriya** ( [LinkedIn](https://linkedin.com/in/xxxxxxxxxx) )
+- 22471A05G6 — **Jaya Lakshmi Kshatriya** ( [LinkedIn](https://www.linkedin.com/in/jaya-lakshmi) )
 **_Work Done:** Assisted in experimentation review and documentation support.
 
-- 22471A05I9 — **Apsa Shaik** ( [LinkedIn](https://linkedin.com/in/xxxxxxxxxx) )
+- 22471A05I9 — **Apsa Shaik** ( [LinkedIn](https://www.linkedin.com/in/apsa-appu-shaik-361a69287/) )
 **_Work Done:** Assisted in literature survey support and result verification.
 
 ---
