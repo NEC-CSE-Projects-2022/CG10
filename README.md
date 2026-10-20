@@ -133,4 +133,5 @@ Python, PyTorch, HuggingFace Transformers, PyABSA, Scikit-learn, Pandas, NumPy, 
 * Models saved for inference and reuse
 * Can be deployed using Flask/FastAPI or Hugging Face Spaces
 
+## IEEE Publication Link - ( [Paper Publication Link](https://ieeexplore.ieee.org/xpl/conhome/11433937/proceeding) )
 ---
